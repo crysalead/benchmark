@@ -1,0 +1,23 @@
+sudo: false
+language: php
+
+php:
+  - 5.5
+  - 5.6
+  - 7.0
+  - hhvm
+
+matrix:
+  allow_failures:
+    - php: hhvm
+  fast_finish: true
+
+before_script:
+  - composer config -g github-oauth.github.com $GITHUB_COMPOSER_AUTH
+  - composer install
+
+script: bin/kahlan
+
+env:
+  global:
+    secure: BIjPH5Jl9bOXdutw/ZWkcv+d0dNrEDjRM4hy6Zb0IXw5RS/moPvGiQhCufOAWizbMhXK7R1joO9Zje/hjChlqVoLAcTJczQ5mWz8KZvIUa65sRBSeH8JTcxHcnR8PcFoZ51sa6NpON9WTqyi3K1yNYo9CJ2p9abIHMK2tW8eH/cgfSVwC7DJEnGcQToWDfmIvbe0w0tHcL6vzfrzl6ZUfpQhnseTQ14tLZ3HNYQdIqF7y4lIlorJPLUlXvIMEGTJsqKdkIePwn2cOBWP8ywZeqIE+86RMDduIdm54unEK1Jl8GabWIfuELp6v3UJaHJWW4HE4lhQi7WUwjr0wPGQUj/7A5r2znsVuRtYCk3I5vBcnXyahN4IMfbWxgQzxCyPOXrcyfeo1qJRwUbUuB9jV7mo3paaZAiH27VXT4bL3QBlLxaVcodrs5VJ3EGqjLEx0BsRZevI8wfvvTHgLgynAsabNP11fapXxrVhXry2gvUFIZidhp0T7vfp6tk+fnViy86DfY3hHpw43JXm7od8DCki42aDTJ5CrOaq27DYhCw6S/9iEc4DoZwPLdZG8colFlX6qQvPqzEFvOXdsYAfFJY7hyFGu2A25QBfJwszCFh2jEZU8mp1wGFpKkUTGiDgGrBhdIHVxLyLOsV4Rgqj/gkhy4dkcS3zEyVWjEEaU2g=

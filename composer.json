@@ -1,0 +1,25 @@
+{
+    "name": "crysalead/benchmark",
+    "description": "Benchmarking library",
+    "keywords": ["Benchmark"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5"
+    },
+    "require-dev": {
+        "crysalead/kahlan": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lead\\Benchmark\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lead\\Benchmark\\Spec\\": "spec/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
